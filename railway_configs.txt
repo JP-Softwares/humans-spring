@@ -1,0 +1,16 @@
+# Java Version
+17
+
+# pom.xml
+<project>
+  ...
+<packaging>jar</packaging>
+<description>...</description>
+<properties>
+	<java.version>17</java.version>
+</properties>
+  ...
+</project>
+
+# Custom build command railway
+mvn package && chmod +x ./mvnw && ./mvnw -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
