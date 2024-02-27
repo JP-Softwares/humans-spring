@@ -1,10 +1,7 @@
 package com.jp.softwares.humans.Models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,5 +26,22 @@ public class Mensagem {
 
     private Date dataHora;
 
-    private Grupo grupo;
+    @ManyToOne
+    private Grupo groupid;
+
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
+    }
+
+    public void setDataHora(Date dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.groupid = grupo;
+    }
 }
