@@ -18,7 +18,8 @@ public class MensagemService {
     public Mensagem Salvar(mensagemJson json){
         Mensagem men = new Mensagem();
         men.setConteudo(json.conteudo());
-        men.setGrupo(json.groupId());
+        System.out.println(json.conteudo());
+        System.out.println(json.nomeUsuario());
         men.setDataHora(json.dataHora());
         men.setNomeUsuario(json.nomeUsuario());
         Mensagem envio = mensagem.save(men);

@@ -4,5 +4,6 @@ import com.jp.softwares.humans.Models.Grupo;
 
 import java.sql.Date;
 
-public record mensagemJson(String nomeUsuario, String conteudo, Date dataHora, Grupo groupId ) {
+public record mensagemJson(String nomeUsuario, String conteudo, Date dataHora) {
+
 }
