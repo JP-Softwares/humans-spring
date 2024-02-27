@@ -24,4 +24,8 @@ public class MensagemService {
         Mensagem envio = mensagem.save(men);
         return envio;
     }
+
+    public Mensagem Buscar(long id){
+        return mensagem.findByid(id);
+    }
 }
