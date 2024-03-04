@@ -7,6 +7,8 @@ import com.jp.softwares.humans.Services.GrupoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/Grupo")
 public class GrupoController {
@@ -21,6 +23,11 @@ public class GrupoController {
     @GetMapping("/{id}")
     public Grupo buscarGrupo(@PathVariable long id){
         return grupos.buscar(id);
+    }
+
+    @GetMapping
+    public List<Grupo> ListarGrupos(){
+        return grupos.ListarTodos();
     }
 
 }

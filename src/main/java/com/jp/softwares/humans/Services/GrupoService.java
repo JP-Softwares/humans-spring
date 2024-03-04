@@ -6,6 +6,9 @@ import com.jp.softwares.humans.Persistencia.GrupoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class GrupoService {
 
@@ -13,7 +16,9 @@ public class GrupoService {
     @Autowired
     private GrupoRepository grupos;
 
-
+    public List<Grupo> ListarTodos(){
+        return grupos.listarTodosGrupos().orElseGet(ArrayList::new);
+    }
     public Grupo salvar(grupoJson json){
         Grupo gru = new Grupo();
         gru.setNome(json.nome());
