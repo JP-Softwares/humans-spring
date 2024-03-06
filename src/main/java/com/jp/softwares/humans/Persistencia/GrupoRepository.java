@@ -13,6 +13,7 @@ public interface GrupoRepository extends JpaRepository<Grupo, Long> {
 
     Grupo findByid(Long id);
 
+
     @Query("FROM Grupo")
     Optional<List<Grupo>> listarTodosGrupos();
 }

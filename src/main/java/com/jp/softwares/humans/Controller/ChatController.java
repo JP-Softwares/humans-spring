@@ -33,5 +33,4 @@ public class ChatController {
         return mensagens.ListarTodos();
     }
 
-
 }

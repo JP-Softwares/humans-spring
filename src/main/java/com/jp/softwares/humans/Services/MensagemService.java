@@ -18,9 +18,7 @@ public class MensagemService {
     private MensagemRepository mensagem;
 
 
-    public List<Mensagem> ListarTodos(){
-        return mensagem.ListarTodasAsMensagens().orElseGet(ArrayList::new);
-    }
+
     public Mensagem Salvar(mensagemJson json){
         Mensagem men = new Mensagem();
         men.setConteudo(json.conteudo());
@@ -28,6 +26,10 @@ public class MensagemService {
         men.setNomeUsuario(json.nomeUsuario());
         Mensagem envio = mensagem.save(men);
         return envio;
+    }
+
+    public List<Mensagem> ListarTodos(){
+        return mensagem.ListarTodasAsMensagens().orElseGet(ArrayList::new);
     }
 
     public Mensagem Buscar(long id){

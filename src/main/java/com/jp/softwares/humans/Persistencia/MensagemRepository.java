@@ -16,4 +16,7 @@ public interface MensagemRepository extends JpaRepository<Mensagem, Long> {
 
     @Query("FROM Mensagem")
     Optional<List<Mensagem>> ListarTodasAsMensagens();
+
+    @Query("FROM Mensagem WHERE groupid = :grupo")
+    Optional<List<Mensagem>> listarTodasDoGrupo(Grupo grupo);
 }
