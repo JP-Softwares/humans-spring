@@ -1,11 +1,15 @@
 package com.jp.softwares.humans.Services;
 
 
+import com.jp.softwares.humans.Models.Grupo;
 import com.jp.softwares.humans.Models.Mensagem;
 import com.jp.softwares.humans.Models.Records.mensagemJson;
 import com.jp.softwares.humans.Persistencia.MensagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class MensagemService {
@@ -14,7 +18,9 @@ public class MensagemService {
     private MensagemRepository mensagem;
 
 
-
+    public List<Mensagem> ListarTodos(){
+        return mensagem.ListarTodasAsMensagens().orElseGet(ArrayList::new);
+    }
     public Mensagem Salvar(mensagemJson json){
         Mensagem men = new Mensagem();
         men.setConteudo(json.conteudo());
