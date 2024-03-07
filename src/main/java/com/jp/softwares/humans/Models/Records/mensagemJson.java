@@ -4,6 +4,6 @@ import com.jp.softwares.humans.Models.Grupo;
 
 import java.util.Date;
 
-public record mensagemJson(String nomeUsuario, String conteudo, Date dataHora) {
+public record mensagemJson(String nomeUsuario, String conteudo, Date dataHora, Long groupid) {
 
 }

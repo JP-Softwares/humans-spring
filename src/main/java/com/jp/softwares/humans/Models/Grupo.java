@@ -28,4 +28,9 @@ public class Grupo {
     private String status;
 
     private Date ultimaInteracao;
+
+    public Grupo (Long id){
+        this.id = id;
+    }
 }
+

@@ -19,13 +19,14 @@ public class MensagemService {
 
 
 
-    public Mensagem Salvar(mensagemJson json){
+    public mensagemJson Salvar(mensagemJson json){
         Mensagem men = new Mensagem();
         men.setConteudo(json.conteudo());
         men.setDataHora(json.dataHora());
         men.setNomeUsuario(json.nomeUsuario());
+        men.setGroupid(new Grupo(json.groupid()));
         Mensagem envio = mensagem.save(men);
-        return envio;
+        return new mensagemJson(men.getNomeUsuario(), men.getConteudo(), men.getDataHora(), men.getGroupid().getId());
     }
 
     public List<Mensagem> ListarTodos(){

@@ -19,7 +19,7 @@ public class ChatController {
     private MensagemService mensagens;
 
     @PostMapping
-    public Mensagem salvarMensagem(@RequestBody mensagemJson json){
+    public mensagemJson salvarMensagem(@RequestBody mensagemJson json){
         return mensagens.Salvar(json);
     }
 
