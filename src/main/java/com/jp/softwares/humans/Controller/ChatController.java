@@ -1,6 +1,7 @@
 package com.jp.softwares.humans.Controller;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jp.softwares.humans.Models.Mensagem;
 import com.jp.softwares.humans.Models.Records.mensagemJson;
 import com.jp.softwares.humans.Services.MensagemService;
@@ -31,6 +32,11 @@ public class ChatController {
     @GetMapping
     public List<Mensagem> API_Padrao(){
         return mensagens.ListarTodos();
+    }
+
+    @GetMapping("/grupo/{id}")
+    public List<Mensagem> listarMensagem(@PathVariable long id){
+        return mensagens.ListarDoGrupo(id);
     }
 
 }

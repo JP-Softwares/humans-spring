@@ -17,6 +17,9 @@ public class MensagemService {
     @Autowired
     private MensagemRepository mensagem;
 
+    @Autowired
+    private GrupoService grupos;
+
 
 
     public mensagemJson Salvar(mensagemJson json){
@@ -36,4 +39,11 @@ public class MensagemService {
     public Mensagem Buscar(long id){
         return mensagem.findByid(id);
     }
+
+    public List<Mensagem> ListarDoGrupo(Long id){
+        return mensagem.listarTodasDoGrupo(grupos.buscar(id)).orElseGet(ArrayList::new);
+
+    }
+
+
 }

@@ -1,6 +1,8 @@
 package com.jp.softwares.humans.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +28,7 @@ public class Mensagem {
     private Date dataHora;
 
     @ManyToOne
+    @JsonIdentityReference(alwaysAsId = true)
     private Grupo groupid;
 
 }
