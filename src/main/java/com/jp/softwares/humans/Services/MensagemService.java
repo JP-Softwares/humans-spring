@@ -41,7 +41,7 @@ public class MensagemService {
     }
 
     public List<Mensagem> ListarDoGrupo(Long id){
-        return mensagem.listarTodasDoGrupo(grupos.buscar(id)).orElseGet(ArrayList::new);
+        return mensagem.listarTodasDoGrupo(new Grupo(id)).orElseGet(ArrayList::new);
 
     }
 
